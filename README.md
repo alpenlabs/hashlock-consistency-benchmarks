@@ -23,7 +23,29 @@ Apple M2 Max (12 cores, 64 GB), 12 threads, one trial each. Full tables and raw 
 | 3 | Hashlock, SP1, Baby Jubjub | 107.9M cycles | 0.27 s | 4,652 s | 26.3 GiB |
 | 4 | Hashlock, SP1, secp256k1 | 20.8M cycles | 0.26 s | 1,406 s | 29.6 GiB |
 
-Rows 1, 3 and 4 are full runs whose Groth16 proofs verified. SP1 proof generation is STARK proving plus about 147 s of Groth16 wrapping; its one-time setup is program-key generation, since the Groth16 keys are SP1's pre-made v5.0.0 artifacts. Row 2 does not fit in 64 GB (compiling the full circuit alone peaks at 44 GiB), so it is extrapolated linearly from verified 256- and 512-wire runs; its one-time setup is circuit-specific Groth16 key generation. For comparison, BABE reports 1,977 s for row 1's configuration on an AMD Ryzen 7 7840U.
+Rows 1, 3 and 4 are full runs whose Groth16 proofs verified. SP1 proof generation is STARK proving plus about 147 s of Groth16 wrapping; its one-time setup is program-key generation, since the Groth16 keys are SP1's pre-made v5.0.0 artifacts. Row 2 does not fit in 64 GB (compiling the full circuit alone peaks at 44 GiB), so it is extrapolated linearly from verified 256- and 512-wire runs; its one-time setup is circuit-specific Groth16 key generation.
+
+## Soldering against BABE
+
+BABE's Table 4 reports SP1 soldering times for the same 1,019-label configuration. Our runs use the same harness and settings as row 1 above; all Groth16 proofs verified.
+
+| M | SHA-256 label hashes | Guest cycles | STARK proving | Proof generation (incl. Groth16 wrap) | BABE Table 4 | Ours / BABE |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 5 | 12,228 | 40.9M | 1,266 s | 1,415 s | 1,529 s | 0.93 |
+| 6 | 14,266 | 48.4M | 1,460 s | 1,614 s | 1,740 s | 0.93 |
+| 7 | 16,304 | 56.0M | 1,650 s | 1,797 s | 1,977 s | 0.91 |
+
+The hardware differs, so this is a consistency check, not a reproduction:
+
+| | This repo | BABE |
+| --- | --- | --- |
+| CPU | Apple M2 Max, 12 cores | AMD Ryzen 7 7840U, 16 CPU threads |
+| RAM | 64 GB | not stated |
+| Threads | 12 | not stated |
+| SP1 | 5.2.2 (CPU prover, v5.0.0 Groth16 artifacts) | not stated |
+| What is timed | each stage separately; both columns shown | "time to generate a zk-SNARK proof" (stages not stated) |
+
+SP1 sizes shards by installed RAM, so a machine with different memory also proves with different shard settings. Each extra instance adds about 190 s here and 210–240 s in BABE's table.
 
 ## Component costs
 

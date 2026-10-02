@@ -1,0 +1,22 @@
+Setting environment variables took 41.333µs
+Reading R1CS took 7.377590417s
+Reading proving key took 624.985416ms
+Reading witness file took 160.416µs
+Deserializing JSON data took 5.141333ms
+Generating witness took 196.106458ms
+[90m14:40:10[0m DBG constraint system solver done [36mnbConstraints=[0m8382715 [36mtook=[0m1447.412042
+[90m14:40:20[0m DBG prover done [36macceleration=[0mnone [36mbackend=[0mgroth16 [36mcurve=[0mbn254 [36mnbConstraints=[0m8382715 [36mtook=[0m10779.444292
+Generating proof took 12.22729525s
+ignoring uninitialized slice: Vars []frontend.Variable
+ignoring uninitialized slice: Vars []frontend.Variable
+ignoring uninitialized slice: Vars []frontend.Variable
+[90m14:40:20[0m DBG verifier done [36mbackend=[0mgroth16 [36mcurve=[0mbn254 [36mtook=[0m0.987209
+ignoring uninitialized slice: Vars []frontend.Variable
+ignoring uninitialized slice: Vars []frontend.Variable
+ignoring uninitialized slice: Vars []frontend.Variable
+[90m14:40:20[0m DBG verifier done [36mbackend=[0mgroth16 [36mcurve=[0mbn254 [36mtook=[0m0.971416
+ignoring uninitialized slice: Vars []frontend.Variable
+ignoring uninitialized slice: Vars []frontend.Variable
+ignoring uninitialized slice: Vars []frontend.Variable
+[90m14:40:20[0m DBG verifier done [36mbackend=[0mgroth16 [36mcurve=[0mbn254 [36mtook=[0m0.967042
+{"active_stage":null,"additional_instances":4,"core_cycles":40878116,"core_shards":45,"environment":{"GOMAXPROCS":"12","RAYON_NUM_THREADS":"12","SHARD_BATCH_SIZE":null,"SHARD_SIZE":null,"SP1_DISABLE_VK_VERIFICATION":null,"SPLIT_THRESHOLD":null,"TRACE_GEN_WORKERS":null},"expected_sha256_label_hashes":12228,"expected_xor_label_bindings":8152,"groth16_artifacts":"~/.sp1/circuits/groth16/v5.0.0","groth16_tampered_public_output_rejected":true,"groth16_vk_sha256":"a4594c59bbc142f3b81c3ecb7f50a7c34bc9af7c4c444b5d48b795427e285913","guest_elf_sha256":"4b7630425fcda256ba9ddd1945bffcd30d6c8a368f07add0ce0f2cfdfd13829c","guest_instructions":40878116,"guest_output_matches_host":true,"guest_syscalls":24476,"host_arch":"aarch64","host_os":"macos","input_bytes":163104,"input_distribution":"independent odd Free-XOR offset per instance","input_sha256":"412952b19231c950f20a563fad0ab3ee8b544d377d46027737a61856598ec8d4","label_bytes":16,"mode":"groth16","note":"One local trial; not an exact reproduction of BABE's table.","proof_bytes":{"compressed":1315503,"core":72461138,"groth16_serialized":1376},"proof_generation_s_excluding_setup_and_verification":1414.874430166,"prover_options":{"core_opts":{"checkpoints_channel_capacity":128,"records_and_traces_channel_capacity":1,"shard_batch_size":1,"shard_size":2097152,"split_opts":{"combine_memory_threshold":131072,"deferred":4096,"keccak":1365,"memory":262144,"sha_compress":1638,"sha_extend":2730},"trace_gen_workers":1},"recursion_opts":{"checkpoints_channel_capacity":128,"records_and_traces_channel_capacity":1,"shard_batch_size":2,"shard_size":4194304,"split_opts":{"combine_memory_threshold":131072,"deferred":32768,"keccak":10922,"memory":2097152,"sha_compress":13107,"sha_extend":21845},"trace_gen_workers":1}},"public_values_bytes":521840,"schema_version":2,"seed":20261001,"sp1_circuit_version":"v5.0.0","sp1_crates_version":"5.2.2","status":"complete","tampered_public_output_rejected":true,"timings_s":{"compress":400.59143725,"compressed_verify":0.077528292,"core_prove":859.972663791,"core_verify":5.383508166,"execute":1.105531083,"groth16_negative_verify":0.003966042,"groth16_verify":0.003716042,"groth16_wrap":20.438853916,"input_and_oracle":0.002497292,"key_setup":0.272504667,"prover_initialization":2.171478833,"shrink":5.675918292,"shrink_verify":0.038750334,"wrap_bn254":128.195556917,"wrap_bn254_verify":0.105327625},"total_retained_instances":5,"upstream_commit":"52b49127dc426f0c88ce7fc418116e67173c2f22","verified_stages":["core","compressed","groth16"],"wires":1019}

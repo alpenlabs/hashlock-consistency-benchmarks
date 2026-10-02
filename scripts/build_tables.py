@@ -11,6 +11,8 @@ SP1_CASES = [("1", "Soldering (BitVM PR #75), M = 7", "soldering-m7"),
              ("3", "Hashlock, SP1, Baby Jubjub", "hashlock-sp1-babyjubjub"),
              ("4", "Hashlock, SP1, secp256k1", "hashlock-sp1-secp256k1")]
 GIB = 2**30
+# BABE (ePrint 2026/065) Table 4: SP1 soldering time for 1,019 labels, seconds, by retained instances M.
+BABE_TABLE4 = {5: 1529.11, 6: 1740.24, 7: 1977.10}
 
 
 def load(out, name):
@@ -164,6 +166,20 @@ def main():
             t = r["stage_timings_s"]
             L.append(f"| {r['#']} | {r['version']} | " + " | ".join(fmt(t.get(k)) for k in (*STARK, *WRAP)) +
                      f" | {fmt(r['stark_proving_s'])} | {fmt(r['groth16_wrapping_s'])} | {r['core_shards']} |")
+    babe = [(m, sp1_row(str(m), f"M = {m}", f"soldering-m{m}", out, summ)) for m in sorted(BABE_TABLE4)]
+    if any(r.get("status") == "complete" for _, r in babe):
+        L += ["", "## Soldering against BABE Table 4 (1,019 labels)", "",
+              "| M | SHA-256 label hashes | Cycles | STARK proving | Proof generation (incl. Groth16 wrap) | BABE Table 4 | Ours / BABE |",
+              "| ---: | ---: | ---: | ---: | ---: | ---: | ---: |"]
+        for m, r in babe:
+            if r.get("status") != "complete":
+                L.append(f"| {m} | {2 * 1019 * (m + 1):,} | — | — | — | {BABE_TABLE4[m]:,.0f} s | — |")
+                continue
+            L.append(f"| {m} | {2 * 1019 * (m + 1):,} | {r['guest_instructions'] / 1e6:.1f}M | {fmt(r['stark_proving_s'], 0)} s | "
+                     f"{fmt(r['proof_generation_s'], 0)} s | {BABE_TABLE4[m]:,.0f} s | {r['proof_generation_s'] / BABE_TABLE4[m]:.2f} |")
+        L += ["", "Ours: Apple M2 Max (12 cores, 64 GB), 12 threads, SP1 5.2.2. BABE: AMD Ryzen 7 7840U (16 CPU threads; RAM "
+              "not stated), SP1 version not stated, and the paper does not say which proving stages its timer covers. "
+              "One trial each."]
     trackers = [r for r in sp1 if r.get("cycle_tracker")]
     if trackers:
         L += ["", "## Hashlock guest cycle breakdown (millions of instructions)", "",

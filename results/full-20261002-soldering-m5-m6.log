@@ -1,0 +1,5 @@
+08:31:36Z start soldering-m5
+08:55:22Z end soldering-m5: status=complete exit=0 killed=False wall=1426s
+08:55:22Z start soldering-m6
+09:22:31Z end soldering-m6: status=complete exit=0 killed=False wall=1628s
+all cases finished

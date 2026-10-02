@@ -1,0 +1,48 @@
+stage=input_and_oracle status=started
+stage=input_and_oracle status=finished seconds=0.002497
+stage=prover_initialization status=started
+stage=prover_initialization status=finished seconds=2.171479
+stage=execute status=started
+stage=execute status=finished seconds=1.105531
+stage=key_setup status=started
+stage=key_setup status=finished seconds=0.272505
+stage=core_prove status=started
+stage=core_prove status=finished seconds=859.972664
+stage=core_verify status=started
+stage=core_verify status=finished seconds=5.383508
+stage=compress status=started
+stage=compress status=finished seconds=400.591437
+stage=compressed_verify status=started
+stage=compressed_verify status=finished seconds=0.077528
+stage=shrink status=started
+stage=shrink status=finished seconds=5.675918
+stage=shrink_verify status=started
+stage=shrink_verify status=finished seconds=0.038750
+stage=wrap_bn254 status=started
+stage=wrap_bn254 status=finished seconds=128.195557
+stage=wrap_bn254_verify status=started
+stage=wrap_bn254_verify status=finished seconds=0.105328
+stage=groth16_wrap status=started
+stage=groth16_wrap status=finished seconds=20.438854
+stage=groth16_verify status=started
+stage=groth16_verify status=finished seconds=0.003716
+stage=groth16_negative_verify status=started
+stage=groth16_negative_verify status=finished seconds=0.003966
+     1424.34 real     13317.32 user       252.95 sys
+         28840132608  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+            36529028  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                3525  signals received
+                2299  voluntary context switches
+            11059645  involuntary context switches
+     138693787868899  instructions retired
+      40915679468599  cycles elapsed
+         28223526296  peak memory footprint

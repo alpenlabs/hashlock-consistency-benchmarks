@@ -19,6 +19,16 @@ SP1 proof generation is STARK proving (core, compress, shrink) plus Groth16 wrap
 | 3 | Hashlock, SP1, Baby Jubjub | 2,650.4 | 1,848.8 | 5.6 | 126.6 | 20.2 | 4,504.7 | 146.8 | 210 |
 | 4 | Hashlock, SP1, secp256k1 | 535.0 | 719.0 | 5.6 | 126.4 | 20.2 | 1,259.6 | 146.6 | 39 |
 
+## Soldering against BABE Table 4 (1,019 labels)
+
+| M | SHA-256 label hashes | Cycles | STARK proving | Proof generation (incl. Groth16 wrap) | BABE Table 4 | Ours / BABE |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 5 | 12,228 | 40.9M | 1,266 s | 1,415 s | 1,529 s | 0.93 |
+| 6 | 14,266 | 48.4M | 1,460 s | 1,614 s | 1,740 s | 0.93 |
+| 7 | 16,304 | 56.0M | 1,650 s | 1,797 s | 1,977 s | 0.91 |
+
+Ours: Apple M2 Max (12 cores, 64 GB), 12 threads, SP1 5.2.2. BABE: AMD Ryzen 7 7840U (16 CPU threads; RAM not stated), SP1 version not stated, and the paper does not say which proving stages its timer covers. One trial each.
+
 ## Hashlock guest cycle breakdown (millions of instructions)
 
 | # | Version | Table | Scalar mults | SHA-256 | Commit public output | Total guest |

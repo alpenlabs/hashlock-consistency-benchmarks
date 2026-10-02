@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/usr/bin/time",
+    "-l",
+    "./soldering/host/target/release/soldering-bench",
+    "--mode",
+    "groth16",
+    "--wires",
+    "1019",
+    "--artifacts",
+    "~/.sp1/circuits/groth16/v5.0.0",
+    "--instances",
+    "6",
+    "--seed",
+    "20261001",
+    "--out",
+    "./results/full-20261002/soldering-m6"
+  ],
+  "env": {
+    "RAYON_NUM_THREADS": "12",
+    "GOMAXPROCS": "12",
+    "GOMEMLIMIT": null,
+    "RUST_LOG": "warn"
+  }
+}

@@ -27,8 +27,8 @@ HASHLOCK_GNARK = ROOT / "bin/hashlock-bench"
 def cases(args, out):
     sp1 = ["--mode", "groth16", "--wires", "1019", "--artifacts", str(ARTIFACTS)]
     table = {
-        "soldering-m7": [str(SOLDERING), *sp1, "--instances", "7", "--seed", "20261001",
-                         "--out", str(out / "soldering-m7")],
+        **{f"soldering-m{m}": [str(SOLDERING), *sp1, "--instances", str(m), "--seed", "20261001",
+                               "--out", str(out / f"soldering-m{m}")] for m in (5, 6, 7)},
         "hashlock-sp1-secp256k1": [str(HASHLOCK_SP1), *sp1, "--curve", "secp256k1",
                                    "--out", str(out / "hashlock-sp1-secp256k1")],
         "hashlock-sp1-babyjubjub": [str(HASHLOCK_SP1), *sp1, "--curve", "babyjubjub",

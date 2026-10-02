@@ -207,5 +207,61 @@
       "verify": 0.004559,
       "witness": 0.013805792
     }
+  },
+  {
+    "case": "soldering-m5",
+    "exit_code": 0,
+    "killed_by_memory_watchdog": false,
+    "memory_limit_bytes": 60129542144,
+    "process_wall_s": 1425.898753167,
+    "peak_rss_bytes": 28840132608,
+    "watchdog_peak_group_rss_bytes": 28542304256,
+    "status": "complete",
+    "active_stage": null,
+    "timings_s": {
+      "compress": 400.59143725,
+      "compressed_verify": 0.077528292,
+      "core_prove": 859.972663791,
+      "core_verify": 5.383508166,
+      "execute": 1.105531083,
+      "groth16_negative_verify": 0.003966042,
+      "groth16_verify": 0.003716042,
+      "groth16_wrap": 20.438853916,
+      "input_and_oracle": 0.002497292,
+      "key_setup": 0.272504667,
+      "prover_initialization": 2.171478833,
+      "shrink": 5.675918292,
+      "shrink_verify": 0.038750334,
+      "wrap_bn254": 128.195556917,
+      "wrap_bn254_verify": 0.105327625
+    }
+  },
+  {
+    "case": "soldering-m6",
+    "exit_code": 0,
+    "killed_by_memory_watchdog": false,
+    "memory_limit_bytes": 60129542144,
+    "process_wall_s": 1628.447817459,
+    "peak_rss_bytes": 26625015808,
+    "watchdog_peak_group_rss_bytes": 26319044608,
+    "status": "complete",
+    "active_stage": null,
+    "timings_s": {
+      "compress": 469.931631416,
+      "compressed_verify": 0.077180042,
+      "core_prove": 984.858357042,
+      "core_verify": 6.252028125,
+      "execute": 1.320290417,
+      "groth16_negative_verify": 0.004336417,
+      "groth16_verify": 0.004009916,
+      "groth16_wrap": 20.998482917,
+      "input_and_oracle": 0.00620775,
+      "key_setup": 0.260848459,
+      "prover_initialization": 2.089608042,
+      "shrink": 5.624419542,
+      "shrink_verify": 0.038705292,
+      "wrap_bn254": 132.608632333,
+      "wrap_bn254_verify": 0.10452375
+    }
   }
 ]
