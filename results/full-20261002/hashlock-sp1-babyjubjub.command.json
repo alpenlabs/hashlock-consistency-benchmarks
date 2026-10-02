@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/usr/bin/time",
+    "-l",
+    "./hashlock-sp1/host/target/release/hashlock-sp1-bench",
+    "--mode",
+    "groth16",
+    "--wires",
+    "1019",
+    "--artifacts",
+    "~/.sp1/circuits/groth16/v5.0.0",
+    "--curve",
+    "babyjubjub",
+    "--statement",
+    "./results/hashlock-sp1-statements/w1019.json",
+    "--out",
+    "./results/full-20261002/hashlock-sp1-babyjubjub"
+  ],
+  "env": {
+    "RAYON_NUM_THREADS": "12",
+    "GOMAXPROCS": "12",
+    "GOMEMLIMIT": null,
+    "RUST_LOG": "warn"
+  }
+}

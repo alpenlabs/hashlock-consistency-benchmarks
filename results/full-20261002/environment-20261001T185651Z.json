@@ -1,0 +1,83 @@
+{
+  "started_utc": "20261001T185651Z",
+  "argv": [
+    "scripts/full_runs.py",
+    "--out",
+    "results/full-20261002",
+    "--cases",
+    "hashlock-sp1-secp256k1",
+    "soldering-m7",
+    "hashlock-sp1-babyjubjub",
+    "--threads",
+    "12",
+    "--memory-limit-gib",
+    "56"
+  ],
+  "cases": [
+    "hashlock-sp1-secp256k1",
+    "soldering-m7",
+    "hashlock-sp1-babyjubjub"
+  ],
+  "threads": 12,
+  "memory_limit_gib": 56.0,
+  "gomemlimit": null,
+  "binary_sha256": {
+    "hashlock-sp1/host/target/release/hashlock-sp1-bench": "a94dc7b733b1e189015433f1103ecb2f33963657b929b222bf7f011ff25bc4f8",
+    "soldering/host/target/release/soldering-bench": "d1c7da7d95fb32fd88b1d6a6e94fef2807d0fee237b7e2b1806cc404b947ae49"
+  },
+  "sp1_groth16_vk_sha256": "a4594c59bbc142f3b81c3ecb7f50a7c34bc9af7c4c444b5d48b795427e285913",
+  "tools": [
+    {
+      "command": [
+        "go",
+        "version"
+      ],
+      "exit_code": 0,
+      "stdout": "go version go1.26.3 darwin/arm64"
+    },
+    {
+      "command": [
+        "rustc",
+        "-V"
+      ],
+      "exit_code": 0,
+      "stdout": "rustc 1.90.0 (1159e78c4 2025-09-14)"
+    },
+    {
+      "command": [
+        "rustc",
+        "+succinct",
+        "-V"
+      ],
+      "exit_code": 0,
+      "stdout": "rustc 1.94.0-dev"
+    },
+    {
+      "command": [
+        "sysctl",
+        "-n",
+        "machdep.cpu.brand_string"
+      ],
+      "exit_code": 0,
+      "stdout": "Apple M2 Max"
+    },
+    {
+      "command": [
+        "sysctl",
+        "-n",
+        "hw.memsize"
+      ],
+      "exit_code": 0,
+      "stdout": "68719476736"
+    },
+    {
+      "command": [
+        "pmset",
+        "-g",
+        "batt"
+      ],
+      "exit_code": 0,
+      "stdout": "Now drawing from 'AC Power'\n -InternalBattery-0\t80%; AC attached; not charging present: true"
+    }
+  ]
+}

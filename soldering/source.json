@@ -1,0 +1,15 @@
+{
+  "upstream_repository": "https://github.com/BitVM/garbled-snark-verifier",
+  "upstream_commit": "52b49127dc426f0c88ce7fc418116e67173c2f22",
+  "upstream_guest_path": "sp1-soldering-program",
+  "guest_sha256": {
+    "Cargo.toml": "e8ecfbb6117333ffa80a9e3b93d13fb7d7ea7a52a3162b3c7b2a6160450e3326",
+    "Cargo.lock": "73065adbafba98237f1206457885d6b2e4670c5bf9cde8147c0de78e735e40f7",
+    "src/main.rs": "b4956657e4bf8d9bf97d6a2f83e0d35c473a163784d351b86656437bb5bd7a28",
+    "src/types.rs": "2a8a0e18221bf2394da05455326d5bd5c722fc3f6187badc889d63a7d5ed78ad"
+  },
+  "sp1_crates_version": "5.2.2",
+  "sp1_circuit_version": "v5.0.0",
+  "artifact_url": "https://sp1-circuits.s3-us-east-2.amazonaws.com/v5.0.0-groth16.tar.gz",
+  "artifact_archive_sha256": "6cbc2c155c41001e81efd81119bd3d4f32313fcd3184df383d50225315b73104"
+}

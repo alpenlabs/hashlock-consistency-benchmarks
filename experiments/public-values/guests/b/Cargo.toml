@@ -1,0 +1,13 @@
+[package]
+name = "pv-b-patched-hasher"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bincode = "2.0"
+sha2 = { git = "https://github.com/sp1-patches/RustCrypto-hashes", package = "sha2", tag = "patch-sha2-0.10.9-sp1-4.0.0" }
+sp1-zkvm = "5.2.2"
+
+# Route sp1-zkvm's own public-values hasher through the SHA-256 precompile; guest code unchanged.
+[patch.crates-io]
+sha2 = { git = "https://github.com/sp1-patches/RustCrypto-hashes", tag = "patch-sha2-0.10.9-sp1-4.0.0" }

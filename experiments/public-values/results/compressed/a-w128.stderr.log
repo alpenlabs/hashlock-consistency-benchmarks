@@ -1,0 +1,34 @@
+stage=input_and_oracle status=started
+stage=input_and_oracle status=finished seconds=0.000482
+stage=prover_initialization status=started
+stage=prover_initialization status=finished seconds=2.120215
+stage=execute status=started
+stage=execute status=finished seconds=0.199379
+stage=key_setup status=started
+stage=key_setup status=finished seconds=0.259095
+stage=core_prove status=started
+stage=core_prove status=finished seconds=160.163699
+stage=core_verify status=started
+stage=core_verify status=finished seconds=1.070807
+stage=compress status=started
+stage=compress status=finished seconds=80.335717
+stage=compressed_verify status=started
+stage=compressed_verify status=finished seconds=0.077036
+      244.37 real      2249.20 user        42.28 sys
+         21274722304  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+             7254079  page reclaims
+                   2  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+             1624035  involuntary context switches
+      23710486162172  instructions retired
+       6890205121975  cycles elapsed
+         20937015808  peak memory footprint

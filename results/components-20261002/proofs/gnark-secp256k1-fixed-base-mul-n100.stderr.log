@@ -1,0 +1,26 @@
+stage=compile status=started
+stage=compile status=finished seconds=10.675419
+stage=setup status=started
+stage=setup status=finished seconds=343.152962
+stage=prove status=started
+stage=prove status=finished seconds=14.003983
+stage=verify status=started
+stage=verify status=finished seconds=0.002242
+      367.93 real      2529.36 user         7.80 sys
+         10301390848  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              629267  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               78875  signals received
+               56985  voluntary context switches
+              680519  involuntary context switches
+      21867484756134  instructions retired
+       7714766158917  cycles elapsed
+          9915752152  peak memory footprint

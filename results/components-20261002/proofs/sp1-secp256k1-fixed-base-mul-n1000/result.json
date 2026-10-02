@@ -1,0 +1,82 @@
+{
+  "active_stage": null,
+  "approach": "components-sp1",
+  "core_cycles": 4692144,
+  "core_shards": 15,
+  "cycle_tracker": {
+    "op": 4493652,
+    "scalar_mul": 2408752,
+    "table": 1837256
+  },
+  "environment": {
+    "GOMAXPROCS": "12",
+    "RAYON_NUM_THREADS": "12",
+    "SHARD_BATCH_SIZE": null,
+    "SHARD_SIZE": null
+  },
+  "guest_elf_sha256": "ad667274f16564363c994dbf48f696a70143fa8786a88859ca71a8b55982f684",
+  "guest_instructions": 4692144,
+  "guest_output_matches_host": true,
+  "guest_syscalls": 39059,
+  "input_bytes": 32009,
+  "mode": "compressed",
+  "n": 1000,
+  "op": "secp256k1-fixed-base-mul",
+  "proof_bytes": {
+    "compressed": 1477167,
+    "core": 41185738
+  },
+  "proof_generation_s_excluding_setup_and_verification": 491.805838041,
+  "prover_options": {
+    "core_opts": {
+      "checkpoints_channel_capacity": 128,
+      "records_and_traces_channel_capacity": 1,
+      "shard_batch_size": 1,
+      "shard_size": 2097152,
+      "split_opts": {
+        "combine_memory_threshold": 131072,
+        "deferred": 4096,
+        "keccak": 1365,
+        "memory": 262144,
+        "sha_compress": 1638,
+        "sha_extend": 2730
+      },
+      "trace_gen_workers": 1
+    },
+    "recursion_opts": {
+      "checkpoints_channel_capacity": 128,
+      "records_and_traces_channel_capacity": 1,
+      "shard_batch_size": 2,
+      "shard_size": 4194304,
+      "split_opts": {
+        "combine_memory_threshold": 131072,
+        "deferred": 32768,
+        "keccak": 10922,
+        "memory": 2097152,
+        "sha_compress": 13107,
+        "sha_extend": 21845
+      },
+      "trace_gen_workers": 1
+    }
+  },
+  "public_values_bytes": 64,
+  "schema_version": 1,
+  "seed": "20261002",
+  "sp1_crates_version": "5.2.2",
+  "status": "complete",
+  "tampered_public_output_rejected": true,
+  "timings_s": {
+    "compress": 328.594121125,
+    "compressed_verify": 0.081020292,
+    "core_prove": 163.211716916,
+    "core_verify": 4.107142792,
+    "execute": 4.612414459,
+    "input_and_oracle": 0.032914792,
+    "key_setup": 0.267703833,
+    "prover_initialization": 2.100659959
+  },
+  "verified_stages": [
+    "core",
+    "compressed"
+  ]
+}

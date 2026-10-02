@@ -1,0 +1,80 @@
+{
+  "active_stage": null,
+  "approach": "components-sp1",
+  "core_cycles": 326903,
+  "core_shards": 1,
+  "cycle_tracker": {
+    "op": 132509
+  },
+  "environment": {
+    "GOMAXPROCS": "12",
+    "RAYON_NUM_THREADS": "12",
+    "SHARD_BATCH_SIZE": null,
+    "SHARD_SIZE": null
+  },
+  "guest_elf_sha256": "ad667274f16564363c994dbf48f696a70143fa8786a88859ca71a8b55982f684",
+  "guest_instructions": 326903,
+  "guest_output_matches_host": true,
+  "guest_syscalls": 22,
+  "input_bytes": 32009,
+  "mode": "compressed",
+  "n": 1000,
+  "op": "noop",
+  "proof_bytes": {
+    "compressed": 1315503,
+    "core": 1799753
+  },
+  "proof_generation_s_excluding_setup_and_verification": 16.170322833,
+  "prover_options": {
+    "core_opts": {
+      "checkpoints_channel_capacity": 128,
+      "records_and_traces_channel_capacity": 1,
+      "shard_batch_size": 1,
+      "shard_size": 2097152,
+      "split_opts": {
+        "combine_memory_threshold": 131072,
+        "deferred": 4096,
+        "keccak": 1365,
+        "memory": 262144,
+        "sha_compress": 1638,
+        "sha_extend": 2730
+      },
+      "trace_gen_workers": 1
+    },
+    "recursion_opts": {
+      "checkpoints_channel_capacity": 128,
+      "records_and_traces_channel_capacity": 1,
+      "shard_batch_size": 2,
+      "shard_size": 4194304,
+      "split_opts": {
+        "combine_memory_threshold": 131072,
+        "deferred": 32768,
+        "keccak": 10922,
+        "memory": 2097152,
+        "sha_compress": 13107,
+        "sha_extend": 21845
+      },
+      "trace_gen_workers": 1
+    }
+  },
+  "public_values_bytes": 32,
+  "schema_version": 1,
+  "seed": "20261002",
+  "sp1_crates_version": "5.2.2",
+  "status": "complete",
+  "tampered_public_output_rejected": true,
+  "timings_s": {
+    "compress": 5.5279662080000005,
+    "compressed_verify": 0.075417417,
+    "core_prove": 10.642356625,
+    "core_verify": 0.149906583,
+    "execute": 0.009073042,
+    "input_and_oracle": 0.0001885,
+    "key_setup": 0.263120708,
+    "prover_initialization": 2.098076291
+  },
+  "verified_stages": [
+    "core",
+    "compressed"
+  ]
+}

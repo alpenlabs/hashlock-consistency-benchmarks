@@ -1,0 +1,6 @@
+stage=input_and_oracle status=started
+stage=input_and_oracle status=finished seconds=0.000007
+stage=prover_initialization status=started
+stage=prover_initialization status=finished seconds=2.107769
+stage=execute status=started
+stage=execute status=finished seconds=0.003322

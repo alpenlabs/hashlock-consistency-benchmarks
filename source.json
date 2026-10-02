@@ -1,0 +1,5 @@
+{
+  "relation": "per wire/value row: h = SHA256(y) and P = [y]G on Baby Jubjub (EIP-2494 reduced form), y a private 32-byte string",
+  "benchmark_wires": 1019,
+  "rows_per_wire": 2
+}

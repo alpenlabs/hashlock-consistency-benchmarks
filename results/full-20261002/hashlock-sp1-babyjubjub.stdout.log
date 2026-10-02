@@ -1,0 +1,22 @@
+Setting environment variables took 17.083µs
+Reading R1CS took 7.321485959s
+Reading proving key took 610.994959ms
+Reading witness file took 137.666µs
+Deserializing JSON data took 4.977625ms
+Generating witness took 122.661792ms
+[90m22:24:21Z[0m DBG constraint system solver done [36mnbConstraints=[0m8382715 [36mtook=[0m1380.65
+[90m22:24:32Z[0m DBG prover done [36macceleration=[0mnone [36mbackend=[0mgroth16 [36mcurve=[0mbn254 [36mnbConstraints=[0m8382715 [36mtook=[0m10736.895167
+Generating proof took 12.117856083s
+ignoring uninitialized slice: Vars []frontend.Variable
+ignoring uninitialized slice: Vars []frontend.Variable
+ignoring uninitialized slice: Vars []frontend.Variable
+[90m22:24:32Z[0m DBG verifier done [36mbackend=[0mgroth16 [36mcurve=[0mbn254 [36mtook=[0m0.985292
+ignoring uninitialized slice: Vars []frontend.Variable
+ignoring uninitialized slice: Vars []frontend.Variable
+ignoring uninitialized slice: Vars []frontend.Variable
+[90m22:24:32Z[0m DBG verifier done [36mbackend=[0mgroth16 [36mcurve=[0mbn254 [36mtook=[0m0.940667
+ignoring uninitialized slice: Vars []frontend.Variable
+ignoring uninitialized slice: Vars []frontend.Variable
+ignoring uninitialized slice: Vars []frontend.Variable
+[90m22:24:32Z[0m DBG verifier done [36mbackend=[0mgroth16 [36mcurve=[0mbn254 [36mtook=[0m0.986917
+{"active_stage":null,"approach":"hashlock-sp1","core_cycles":107886049,"core_shards":210,"curve":"babyjubjub","cycle_tracker":{"commit":11776276,"scalar_mul":78086806,"sha256":1891739,"table":15739599},"environment":{"GOMAXPROCS":"12","RAYON_NUM_THREADS":"12","SHARD_BATCH_SIZE":null,"SHARD_SIZE":null,"SP1_DISABLE_VK_VERIFICATION":null,"SPLIT_THRESHOLD":null,"TRACE_GEN_WORKERS":null},"expected_fixed_base_scalar_multiplications":2038,"expected_sha256_evaluations":2038,"fixed_base_method":"8-bit windows, 32 x 256 table computed in the guest","groth16_artifacts":"~/.sp1/circuits/groth16/v5.0.0","groth16_tampered_public_output_rejected":true,"groth16_vk_sha256":"a4594c59bbc142f3b81c3ecb7f50a7c34bc9af7c4c444b5d48b795427e285913","guest_elf_sha256":"1fbb97bc3deefd4638b014ae1075ee2a07f496788fba09e2a7d2a1602a4b5651","guest_instructions":107886049,"guest_output_matches_host":true,"guest_syscalls":602645,"host_arch":"aarch64","host_os":"macos","input_bytes":65225,"input_sha256":"8781ef09e2df037cdbc64e109a7457d1f355f833b5c97df98318d19c775ee233","mode":"groth16","note":"One local trial.","preimage_bytes":32,"proof_bytes":{"compressed":1315503,"core":342494720,"groth16_serialized":1376},"proof_generation_s_excluding_setup_and_verification":4651.555163334,"prover_options":{"core_opts":{"checkpoints_channel_capacity":128,"records_and_traces_channel_capacity":1,"shard_batch_size":1,"shard_size":2097152,"split_opts":{"combine_memory_threshold":131072,"deferred":4096,"keccak":1365,"memory":262144,"sha_compress":1638,"sha_extend":2730},"trace_gen_workers":1},"recursion_opts":{"checkpoints_channel_capacity":128,"records_and_traces_channel_capacity":1,"shard_batch_size":2,"shard_size":4194304,"split_opts":{"combine_memory_threshold":131072,"deferred":32768,"keccak":10922,"memory":2097152,"sha_compress":13107,"sha_extend":21845},"trace_gen_workers":1}},"public_values_bytes":195653,"rows":2038,"rows_per_wire":2,"scalar_encoding":"unsigned 32-byte big-endian; no y < L condition","schema_version":2,"seed":"20261001","sp1_circuit_version":"v5.0.0","sp1_crates_version":"5.2.2","statement_sha256":"b1b3d72502bd6fc89863229b02c0dc4c111fb5155a9b128870716429cc9f46b2","status":"complete","tampered_public_output_rejected":true,"timings_s":{"compress":1848.759104375,"compressed_verify":0.076010542,"core_prove":2650.357718541,"core_verify":26.423274208,"execute":9.129931292,"groth16_negative_verify":0.002933334,"groth16_verify":0.002780916,"groth16_wrap":20.185392834,"input_and_oracle":0.006211958,"key_setup":0.266449375,"prover_initialization":2.034617,"shrink":5.611770667,"shrink_verify":0.039358167,"wrap_bn254":126.641176917,"wrap_bn254_verify":0.104258125},"verified_stages":["core","compressed","groth16"],"wires":1019}

@@ -1,0 +1,168 @@
+{
+  "sp1": [
+    {
+      "#": "1",
+      "version": "Soldering (BitVM PR #75), M = 7",
+      "status": "complete",
+      "measured": true,
+      "work": "1019 wires \u00d7 7 instances",
+      "guest_instructions": 55972409,
+      "core_cycles": 55972409,
+      "core_shards": 60,
+      "public_values_bytes": 717520,
+      "one_time_setup_s": 0.254678542,
+      "one_time_setup_kind": "SP1 program keys (Groth16 artifacts pre-made)",
+      "stark_proving_s": 1650.473823625,
+      "groth16_wrapping_s": 146.587722583,
+      "proof_generation_s": 1797.061546208,
+      "verification_s": 0.004229041,
+      "peak_rss_bytes": 27571175424,
+      "proof_bytes": 1375,
+      "stage_timings_s": {
+        "core_prove": 1121.743677542,
+        "compress": 523.141049,
+        "shrink": 5.589097083,
+        "wrap_bn254": 126.430134958,
+        "groth16_wrap": 20.157587625
+      },
+      "cycle_tracker": null
+    },
+    {
+      "#": "3",
+      "version": "Hashlock, SP1, Baby Jubjub",
+      "status": "complete",
+      "measured": true,
+      "work": "2038 rows",
+      "guest_instructions": 107886049,
+      "core_cycles": 107886049,
+      "core_shards": 210,
+      "public_values_bytes": 195653,
+      "one_time_setup_s": 0.266449375,
+      "one_time_setup_kind": "SP1 program keys (Groth16 artifacts pre-made)",
+      "stark_proving_s": 4504.7285935830005,
+      "groth16_wrapping_s": 146.826569751,
+      "proof_generation_s": 4651.555163334,
+      "verification_s": 0.002780916,
+      "peak_rss_bytes": 28269936640,
+      "proof_bytes": 1376,
+      "stage_timings_s": {
+        "core_prove": 2650.357718541,
+        "compress": 1848.759104375,
+        "shrink": 5.611770667,
+        "wrap_bn254": 126.641176917,
+        "groth16_wrap": 20.185392834
+      },
+      "cycle_tracker": {
+        "commit": 11776276,
+        "scalar_mul": 78086806,
+        "sha256": 1891739,
+        "table": 15739599
+      }
+    },
+    {
+      "#": "4",
+      "version": "Hashlock, SP1, secp256k1",
+      "status": "complete",
+      "measured": true,
+      "work": "2038 rows",
+      "guest_instructions": 20754976,
+      "core_cycles": 20754976,
+      "core_shards": 39,
+      "public_values_bytes": 195653,
+      "one_time_setup_s": 0.264797917,
+      "one_time_setup_kind": "SP1 program keys (Groth16 artifacts pre-made)",
+      "stark_proving_s": 1259.643229583,
+      "groth16_wrapping_s": 146.600389417,
+      "proof_generation_s": 1406.243619,
+      "verification_s": 0.002829917,
+      "peak_rss_bytes": 31767609344,
+      "proof_bytes": 1376,
+      "stage_timings_s": {
+        "core_prove": 535.020803375,
+        "compress": 719.035055375,
+        "shrink": 5.587370833,
+        "wrap_bn254": 126.35889095900001,
+        "groth16_wrap": 20.241498458
+      },
+      "cycle_tracker": {
+        "commit": 11776276,
+        "scalar_mul": 4898956,
+        "sha256": 1891739,
+        "table": 1796394
+      }
+    }
+  ],
+  "gnark_points": [
+    {
+      "wires": 1,
+      "rows": 2,
+      "constraints": 185389,
+      "keygen_status": "complete",
+      "keygen_killed": false,
+      "compile_s": 0.638285875,
+      "keygen_s": 15.295629,
+      "keygen_peak_rss_bytes": 542081024,
+      "proving_key_bytes": 49458865,
+      "prove_status": "complete",
+      "prove_killed": false,
+      "prove_s": 0.469750709,
+      "verify_s": 0.001788625,
+      "prove_peak_rss_bytes": 456835072,
+      "proof_verified": true,
+      "proof_bytes": 196
+    },
+    {
+      "wires": 256,
+      "rows": 512,
+      "constraints": 13858323,
+      "keygen_status": "complete",
+      "keygen_killed": false,
+      "compile_s": 53.091402416,
+      "keygen_s": 980.34131525,
+      "keygen_peak_rss_bytes": 30256562176,
+      "proving_key_bytes": 3417942885,
+      "prove_status": "complete",
+      "prove_killed": false,
+      "prove_s": 36.733970292,
+      "verify_s": 0.003350292,
+      "prove_peak_rss_bytes": 20717109248,
+      "proof_verified": true,
+      "proof_bytes": 196
+    },
+    {
+      "wires": 512,
+      "rows": 1024,
+      "constraints": 27584875,
+      "keygen_status": "complete",
+      "keygen_killed": false,
+      "compile_s": 106.254198958,
+      "keygen_s": 1940.2898095,
+      "keygen_peak_rss_bytes": 46226882560,
+      "proving_key_bytes": 6805913877,
+      "prove_status": "complete",
+      "prove_killed": false,
+      "prove_s": 73.024128959,
+      "verify_s": 0.004559,
+      "prove_peak_rss_bytes": 40363884544,
+      "proof_verified": true,
+      "proof_bytes": 196
+    }
+  ],
+  "gnark_full_compile": {
+    "constraints": 54769883,
+    "compile_s": 218.687197375,
+    "peak_rss_bytes": 47414312960
+  },
+  "gnark_full_extrapolated": {
+    "basis_wires": [
+      256,
+      512
+    ],
+    "constraints": 54769883,
+    "keygen_s": 3841.437854236523,
+    "prove_s": 144.89565603176118,
+    "keygen_peak_rss_bytes": 77855603844.23825,
+    "prove_peak_rss_bytes": 79273710084.74486,
+    "proving_key_bytes": 13515684729.963507
+  }
+}

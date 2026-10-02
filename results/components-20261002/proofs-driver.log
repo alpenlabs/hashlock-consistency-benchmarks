@@ -1,0 +1,51 @@
+05:13:25Z start gnark-fr-mul-n1
+05:13:25Z end gnark-fr-mul-n1 exit=0
+05:13:25Z start gnark-fr-mul-n1000
+05:13:25Z end gnark-fr-mul-n1000 exit=0
+05:13:25Z start gnark-xor128-n1
+05:13:31Z end gnark-xor128-n1 exit=0
+05:13:31Z start gnark-xor128-n1000
+05:13:46Z end gnark-xor128-n1000 exit=0
+05:13:46Z start gnark-bjj-fixed-base-mul-n1
+05:13:46Z end gnark-bjj-fixed-base-mul-n1 exit=0
+05:13:46Z start gnark-bjj-fixed-base-mul-n1000
+05:14:28Z end gnark-bjj-fixed-base-mul-n1000 exit=0
+05:14:28Z start gnark-sha256-n1
+05:14:43Z end gnark-sha256-n1 exit=0
+05:14:43Z start gnark-sha256-n200
+05:21:58Z end gnark-sha256-n200 exit=0
+05:21:58Z start gnark-secp256k1-fixed-base-mul-n1
+05:22:03Z end gnark-secp256k1-fixed-base-mul-n1 exit=0
+05:22:03Z start gnark-secp256k1-fixed-base-mul-n100
+05:28:11Z end gnark-secp256k1-fixed-base-mul-n100 exit=0
+05:28:11Z start sp1-noop-n0
+05:28:24Z end sp1-noop-n0 exit=0
+05:28:24Z start sp1-noop-n1000
+05:28:43Z end sp1-noop-n1000 exit=0
+05:28:43Z start sp1-sha256-precompile-n0
+05:28:57Z end sp1-sha256-precompile-n0 exit=0
+05:28:57Z start sp1-sha256-precompile-n1000
+05:30:01Z end sp1-sha256-precompile-n1000 exit=0
+05:30:01Z start sp1-sha256-software-n0
+05:30:15Z end sp1-sha256-software-n0 exit=0
+05:30:15Z start sp1-sha256-software-n1000
+05:32:11Z end sp1-sha256-software-n1000 exit=0
+05:32:11Z start sp1-xor128-n0
+05:32:25Z end sp1-xor128-n0 exit=0
+05:32:25Z start sp1-xor128-n1000
+05:32:44Z end sp1-xor128-n1000 exit=0
+05:32:44Z start sp1-fr-mul-precompile-n0
+05:32:57Z end sp1-fr-mul-precompile-n0 exit=0
+05:32:57Z start sp1-fr-mul-precompile-n1000
+05:33:37Z end sp1-fr-mul-precompile-n1000 exit=0
+05:33:37Z start sp1-secp256k1-fixed-base-mul-n0
+05:36:20Z end sp1-secp256k1-fixed-base-mul-n0 exit=0
+05:36:20Z start sp1-secp256k1-fixed-base-mul-n1000
+05:44:43Z end sp1-secp256k1-fixed-base-mul-n1000 exit=0
+05:44:43Z start sp1-commit-32b-n0
+05:44:56Z end sp1-commit-32b-n0 exit=0
+05:44:56Z start sp1-commit-32b-n1000
+05:46:05Z end sp1-commit-32b-n1000 exit=0
+05:46:05Z start sp1-bjj-fixed-base-mul-n0
+06:00:58Z end sp1-bjj-fixed-base-mul-n0 exit=0
+06:00:59Z start sp1-bjj-fixed-base-mul-n1000

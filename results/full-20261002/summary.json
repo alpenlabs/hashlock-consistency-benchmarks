@@ -1,0 +1,211 @@
+[
+  {
+    "case": "hashlock-sp1-secp256k1",
+    "exit_code": 0,
+    "killed_by_memory_watchdog": false,
+    "memory_limit_bytes": 60129542144,
+    "process_wall_s": 1428.259308041,
+    "peak_rss_bytes": 31767609344,
+    "watchdog_peak_group_rss_bytes": 31499976704,
+    "status": "complete",
+    "active_stage": null,
+    "timings_s": {
+      "compress": 719.035055375,
+      "compressed_verify": 0.081130875,
+      "core_prove": 535.020803375,
+      "core_verify": 8.645372875,
+      "execute": 9.000240042,
+      "groth16_negative_verify": 0.002924542,
+      "groth16_verify": 0.002829917,
+      "groth16_wrap": 20.241498458,
+      "input_and_oracle": 0.068260292,
+      "key_setup": 0.264797917,
+      "prover_initialization": 2.12258,
+      "shrink": 5.587370833,
+      "shrink_verify": 0.038048333,
+      "wrap_bn254": 126.35889095900001,
+      "wrap_bn254_verify": 0.104599416
+    }
+  },
+  {
+    "case": "soldering-m7",
+    "exit_code": 0,
+    "killed_by_memory_watchdog": false,
+    "memory_limit_bytes": 60129542144,
+    "process_wall_s": 1812.4332556250001,
+    "peak_rss_bytes": 27571175424,
+    "watchdog_peak_group_rss_bytes": 27532132352,
+    "status": "complete",
+    "active_stage": null,
+    "timings_s": {
+      "compress": 523.141049,
+      "compressed_verify": 0.07555675,
+      "core_prove": 1121.743677542,
+      "core_verify": 7.128137417,
+      "execute": 1.51596675,
+      "groth16_negative_verify": 0.004609583,
+      "groth16_verify": 0.004229041,
+      "groth16_wrap": 20.157587625,
+      "input_and_oracle": 0.00555975,
+      "key_setup": 0.254678542,
+      "prover_initialization": 2.105635375,
+      "shrink": 5.589097083,
+      "shrink_verify": 0.038027458,
+      "wrap_bn254": 126.430134958,
+      "wrap_bn254_verify": 0.104603708
+    }
+  },
+  {
+    "case": "hashlock-gnark-w1-keygen",
+    "exit_code": 0,
+    "killed_by_memory_watchdog": false,
+    "memory_limit_bytes": 55834574848,
+    "process_wall_s": 20.117847333,
+    "peak_rss_bytes": 542081024,
+    "watchdog_peak_group_rss_bytes": 541589504,
+    "status": "complete",
+    "active_stage": null,
+    "timings_s": {
+      "compile": 0.638285875,
+      "setup": 15.295629,
+      "write_keys": 0.098795584
+    }
+  },
+  {
+    "case": "hashlock-gnark-w1-prove",
+    "exit_code": 0,
+    "killed_by_memory_watchdog": false,
+    "memory_limit_bytes": 55834574848,
+    "process_wall_s": 5.0413689999999995,
+    "peak_rss_bytes": 456835072,
+    "watchdog_peak_group_rss_bytes": 2441216,
+    "status": "complete",
+    "active_stage": null,
+    "timings_s": {
+      "host_fixture": 0.000221459,
+      "load_constraint_system": 0.020202166,
+      "load_keys": 0.105261709,
+      "negative_verification": 0.003590541,
+      "prove": 0.469750709,
+      "serialize": 0.03377025,
+      "verify": 0.001788625,
+      "witness": 0.000100959
+    }
+  },
+  {
+    "case": "hashlock-sp1-babyjubjub",
+    "exit_code": 0,
+    "killed_by_memory_watchdog": false,
+    "memory_limit_bytes": 55834574848,
+    "process_wall_s": 4694.3333765,
+    "peak_rss_bytes": 28269936640,
+    "watchdog_peak_group_rss_bytes": 28018999296,
+    "status": "complete",
+    "active_stage": null,
+    "timings_s": {
+      "compress": 1848.759104375,
+      "compressed_verify": 0.076010542,
+      "core_prove": 2650.357718541,
+      "core_verify": 26.423274208,
+      "execute": 9.129931292,
+      "groth16_negative_verify": 0.002933334,
+      "groth16_verify": 0.002780916,
+      "groth16_wrap": 20.185392834,
+      "input_and_oracle": 0.006211958,
+      "key_setup": 0.266449375,
+      "prover_initialization": 2.034617,
+      "shrink": 5.611770667,
+      "shrink_verify": 0.039358167,
+      "wrap_bn254": 126.641176917,
+      "wrap_bn254_verify": 0.104258125
+    }
+  },
+  {
+    "case": "hashlock-gnark-w1019-compile",
+    "exit_code": 0,
+    "killed_by_memory_watchdog": false,
+    "memory_limit_bytes": 55834574848,
+    "process_wall_s": 221.10606625,
+    "peak_rss_bytes": 47414312960,
+    "watchdog_peak_group_rss_bytes": 46954512384,
+    "status": "complete",
+    "active_stage": null,
+    "timings_s": {
+      "compile": 218.687197375
+    }
+  },
+  {
+    "case": "hashlock-gnark-w256-keygen",
+    "exit_code": 0,
+    "killed_by_memory_watchdog": false,
+    "memory_limit_bytes": 55834574848,
+    "process_wall_s": 1044.399634417,
+    "peak_rss_bytes": 30256562176,
+    "watchdog_peak_group_rss_bytes": 30257790976,
+    "status": "complete",
+    "active_stage": null,
+    "timings_s": {
+      "compile": 53.091402416,
+      "setup": 980.34131525,
+      "write_keys": 6.663117416
+    }
+  },
+  {
+    "case": "hashlock-gnark-w256-prove",
+    "exit_code": 0,
+    "killed_by_memory_watchdog": false,
+    "memory_limit_bytes": 55834574848,
+    "process_wall_s": 50.5545762910001,
+    "peak_rss_bytes": 20717109248,
+    "watchdog_peak_group_rss_bytes": 20681277440,
+    "status": "complete",
+    "active_stage": null,
+    "timings_s": {
+      "host_fixture": 0.032127666,
+      "load_constraint_system": 0.943043125,
+      "load_keys": 6.172313125,
+      "negative_verification": 0.01072125,
+      "prove": 36.733970292,
+      "serialize": 2.296795667,
+      "verify": 0.003350292,
+      "witness": 0.006745541
+    }
+  },
+  {
+    "case": "hashlock-gnark-w512-keygen",
+    "exit_code": 0,
+    "killed_by_memory_watchdog": false,
+    "memory_limit_bytes": 55834574848,
+    "process_wall_s": 2068.8313534999998,
+    "peak_rss_bytes": 46226882560,
+    "watchdog_peak_group_rss_bytes": 46214316032,
+    "status": "complete",
+    "active_stage": null,
+    "timings_s": {
+      "compile": 106.254198958,
+      "setup": 1940.2898095,
+      "write_keys": 17.503882916
+    }
+  },
+  {
+    "case": "hashlock-gnark-w512-prove",
+    "exit_code": 0,
+    "killed_by_memory_watchdog": false,
+    "memory_limit_bytes": 55834574848,
+    "process_wall_s": 96.07090495900002,
+    "peak_rss_bytes": 40363884544,
+    "watchdog_peak_group_rss_bytes": 40291532800,
+    "status": "complete",
+    "active_stage": null,
+    "timings_s": {
+      "host_fixture": 0.064224875,
+      "load_constraint_system": 1.9710005000000002,
+      "load_keys": 12.661719708,
+      "negative_verification": 0.01728975,
+      "prove": 73.024128959,
+      "serialize": 4.547487667,
+      "verify": 0.004559,
+      "witness": 0.013805792
+    }
+  }
+]

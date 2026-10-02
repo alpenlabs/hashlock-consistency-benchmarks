@@ -1,0 +1,35 @@
+gas: 91420078
+opcode counts (55980003 total instructions):
+    8810164 add
+    8262695 or
+    8232247 srl
+    8162913 sll
+    7965286 xor
+    4088961 lw
+    3395598 sw
+    2595679 and
+    1996561 lbu
+    1051797 sb
+     407927 bltu
+     249212 jalr
+     160444 bne
+     144014 beq
+     135737 sub
+     124610 auipc
+      61227 bgeu
+      47038 sltu
+      35755 mul
+      32628 ecall
+      19462 jal
+         45 mulhu
+          2 bge
+          1 blt
+syscall counts (32628 total syscall instructions):
+    16304 sha_compress
+    16304 sha_extend
+        8 commit
+        8 commit_deferred_proofs
+        1 halt
+        1 write
+        1 hint_len
+        1 hint_read

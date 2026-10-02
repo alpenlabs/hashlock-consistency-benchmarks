@@ -1,0 +1,34 @@
+stage=compile status=started
+stage=compile status=finished seconds=6.989601
+stage=host_fixture status=started
+stage=host_fixture status=finished seconds=0.004109
+stage=witness status=started
+stage=witness status=finished seconds=0.000790
+stage=setup status=started
+stage=setup status=finished seconds=136.111589
+stage=prove status=started
+stage=prove status=finished seconds=5.014156
+stage=verify status=started
+stage=verify status=finished seconds=0.002167
+stage=negative_verification status=started
+stage=negative_verification status=finished seconds=0.004606
+stage=serialize status=started
+stage=serialize status=finished seconds=0.309747
+      148.47 real       918.70 user         6.78 sys
+          4370137088  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              267141  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               33279  signals received
+               22770  voluntary context switches
+              471300  involuntary context switches
+       8199387489138  instructions retired
+       2826478779084  cycles elapsed
+          4282568328  peak memory footprint

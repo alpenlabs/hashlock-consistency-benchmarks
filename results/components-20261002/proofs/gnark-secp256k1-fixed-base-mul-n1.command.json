@@ -1,0 +1,14 @@
+[
+  "/usr/bin/time",
+  "-l",
+  "./bin/components-gnark",
+  "bench",
+  "-op",
+  "secp256k1-fixed-base-mul",
+  "-n",
+  "1",
+  "-mode",
+  "prove",
+  "-out",
+  "./results/components-20261002/proofs/gnark-secp256k1-fixed-base-mul-n1"
+]

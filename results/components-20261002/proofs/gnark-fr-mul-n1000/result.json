@@ -1,0 +1,20 @@
+{
+  "approach": "components-gnark",
+  "constraints": 1000,
+  "cpu_workers": 12,
+  "go_version": "go1.26.3",
+  "internal_variables": 999,
+  "mode": "prove",
+  "n": 1000,
+  "op": "fr-mul",
+  "proof_verified": true,
+  "seed": "20261002",
+  "status": "complete",
+  "tampered_public_rejected": true,
+  "timings_s": {
+    "compile": 0.000599625,
+    "prove": 0.009039667,
+    "setup": 0.061262125,
+    "verify": 0.00094025
+  }
+}

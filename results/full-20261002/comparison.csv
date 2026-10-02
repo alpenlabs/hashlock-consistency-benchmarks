@@ -1,0 +1,5 @@
+#,version,status,measured,work,guest_instructions,constraints,one_time_setup_s,stark_proving_s,groth16_wrapping_s,proof_generation_s,verification_s,peak_rss_bytes,proof_bytes
+1,"Soldering (BitVM PR #75), M = 7",complete,True,1019 wires × 7 instances,55972409,,0.254678542,1650.473823625,146.587722583,1797.061546208,0.004229041,27571175424,1375
+3,"Hashlock, SP1, Baby Jubjub",complete,True,2038 rows,107886049,,0.266449375,4504.7285935830005,146.826569751,4651.555163334,0.002780916,28269936640,1376
+4,"Hashlock, SP1, secp256k1",complete,True,2038 rows,20754976,,0.264797917,1259.643229583,146.600389417,1406.243619,0.002829917,31767609344,1376
+2,"Hashlock, gnark (extrapolated)",extrapolated,False,2038 rows,,54769883,3841.437854236523,,,144.89565603176118,,79273710084.74486,

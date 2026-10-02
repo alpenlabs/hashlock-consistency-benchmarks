@@ -1,0 +1,14 @@
+[
+  "/usr/bin/time",
+  "-l",
+  "./bin/components-gnark",
+  "bench",
+  "-op",
+  "sha256",
+  "-n",
+  "200",
+  "-mode",
+  "prove",
+  "-out",
+  "./results/components-20261002/proofs/gnark-sha256-n200"
+]

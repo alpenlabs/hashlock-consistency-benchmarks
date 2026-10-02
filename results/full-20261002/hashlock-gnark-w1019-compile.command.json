@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/usr/bin/time",
+    "-l",
+    "./bin/hashlock-bench",
+    "-wires",
+    "1019",
+    "-mode",
+    "compile",
+    "-out",
+    "./results/full-20261002/hashlock-gnark-w1019-compile"
+  ],
+  "env": {
+    "RAYON_NUM_THREADS": "12",
+    "GOMAXPROCS": "12",
+    "GOMEMLIMIT": "44GiB",
+    "RUST_LOG": "warn"
+  }
+}

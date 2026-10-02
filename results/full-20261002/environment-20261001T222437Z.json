@@ -1,0 +1,86 @@
+{
+  "started_utc": "20261001T222437Z",
+  "argv": [
+    "scripts/full_runs.py",
+    "--out",
+    "results/full-20261002",
+    "--memory-limit-gib",
+    "52",
+    "--gomemlimit",
+    "44GiB",
+    "--cases",
+    "hashlock-gnark-w1019-compile",
+    "hashlock-gnark-w256-keygen",
+    "hashlock-gnark-w256-prove",
+    "hashlock-gnark-w512-keygen",
+    "hashlock-gnark-w512-prove"
+  ],
+  "cases": [
+    "hashlock-gnark-w1019-compile",
+    "hashlock-gnark-w256-keygen",
+    "hashlock-gnark-w256-prove",
+    "hashlock-gnark-w512-keygen",
+    "hashlock-gnark-w512-prove"
+  ],
+  "threads": 12,
+  "memory_limit_gib": 52.0,
+  "gomemlimit": "44GiB",
+  "binary_sha256": {
+    "bin/hashlock-bench": "848a4d4a6525d96f3660f31983966ae406738ca491ead98bd925807d6fbbbc77"
+  },
+  "sp1_groth16_vk_sha256": "a4594c59bbc142f3b81c3ecb7f50a7c34bc9af7c4c444b5d48b795427e285913",
+  "tools": [
+    {
+      "command": [
+        "go",
+        "version"
+      ],
+      "exit_code": 0,
+      "stdout": "go version go1.26.3 darwin/arm64"
+    },
+    {
+      "command": [
+        "rustc",
+        "-V"
+      ],
+      "exit_code": 0,
+      "stdout": "rustc 1.90.0 (1159e78c4 2025-09-14)"
+    },
+    {
+      "command": [
+        "rustc",
+        "+succinct",
+        "-V"
+      ],
+      "exit_code": 0,
+      "stdout": "rustc 1.94.0-dev"
+    },
+    {
+      "command": [
+        "sysctl",
+        "-n",
+        "machdep.cpu.brand_string"
+      ],
+      "exit_code": 0,
+      "stdout": "Apple M2 Max"
+    },
+    {
+      "command": [
+        "sysctl",
+        "-n",
+        "hw.memsize"
+      ],
+      "exit_code": 0,
+      "stdout": "68719476736"
+    },
+    {
+      "command": [
+        "pmset",
+        "-g",
+        "batt"
+      ],
+      "exit_code": 0,
+      "stdout": "Now drawing from 'AC Power'\n -InternalBattery-0\t80%; AC attached; not charging present: true"
+    }
+  ]
+}

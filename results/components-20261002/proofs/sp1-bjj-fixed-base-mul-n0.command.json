@@ -1,0 +1,15 @@
+[
+  "/usr/bin/time",
+  "-l",
+  "./components/sp1/host/target/release/components-sp1-bench",
+  "--op",
+  "bjj-fixed-base-mul",
+  "--n",
+  "0",
+  "--mode",
+  "compressed",
+  "--out",
+  "./results/components-20261002/proofs/sp1-bjj-fixed-base-mul-n0",
+  "--bjj-oracle",
+  "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+]

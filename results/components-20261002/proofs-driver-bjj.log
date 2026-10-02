@@ -1,0 +1,28 @@
+skip gnark-fr-mul-n1
+skip gnark-fr-mul-n1000
+skip gnark-xor128-n1
+skip gnark-xor128-n1000
+skip gnark-bjj-fixed-base-mul-n1
+skip gnark-bjj-fixed-base-mul-n1000
+skip gnark-sha256-n1
+skip gnark-sha256-n200
+skip gnark-secp256k1-fixed-base-mul-n1
+skip gnark-secp256k1-fixed-base-mul-n100
+skip sp1-noop-n0
+skip sp1-noop-n1000
+skip sp1-sha256-precompile-n0
+skip sp1-sha256-precompile-n1000
+skip sp1-sha256-software-n0
+skip sp1-sha256-software-n1000
+skip sp1-xor128-n0
+skip sp1-xor128-n1000
+skip sp1-fr-mul-precompile-n0
+skip sp1-fr-mul-precompile-n1000
+skip sp1-secp256k1-fixed-base-mul-n0
+skip sp1-secp256k1-fixed-base-mul-n1000
+skip sp1-commit-32b-n0
+skip sp1-commit-32b-n1000
+skip sp1-bjj-fixed-base-mul-n0
+07:16:46Z start sp1-bjj-fixed-base-mul-n1000
+07:58:56Z end sp1-bjj-fixed-base-mul-n1000 exit=0
+components finished

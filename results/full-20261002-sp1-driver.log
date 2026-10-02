@@ -1,0 +1,5 @@
+18:56:51Z start hashlock-sp1-secp256k1
+19:20:39Z end hashlock-sp1-secp256k1: status=complete exit=0 killed=False wall=1428s
+19:20:39Z start soldering-m7
+19:50:52Z end soldering-m7: status=complete exit=0 killed=False wall=1812s
+19:50:52Z start hashlock-sp1-babyjubjub

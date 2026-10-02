@@ -1,0 +1,20 @@
+21:05:57Z start hashlock-gnark-w1-keygen
+21:06:17Z end hashlock-gnark-w1-keygen: status=complete exit=0 killed=False wall=20s
+21:06:17Z start hashlock-gnark-w1-prove
+21:06:22Z end hashlock-gnark-w1-prove: status=complete exit=0 killed=False wall=5s
+all cases finished
+21:06:22Z start hashlock-sp1-babyjubjub
+22:24:36Z end hashlock-sp1-babyjubjub: status=complete exit=0 killed=False wall=4694s
+all cases finished
+22:24:37Z start hashlock-gnark-w1019-compile
+22:28:18Z end hashlock-gnark-w1019-compile: status=complete exit=0 killed=False wall=221s
+22:28:18Z start hashlock-gnark-w256-keygen
+22:45:42Z end hashlock-gnark-w256-keygen: status=complete exit=0 killed=False wall=1044s
+22:45:42Z start hashlock-gnark-w256-prove
+22:46:33Z end hashlock-gnark-w256-prove: status=complete exit=0 killed=False wall=51s
+22:46:33Z start hashlock-gnark-w512-keygen
+23:21:02Z end hashlock-gnark-w512-keygen: status=complete exit=0 killed=False wall=2069s
+23:21:02Z start hashlock-gnark-w512-prove
+23:22:38Z end hashlock-gnark-w512-prove: status=complete exit=0 killed=False wall=96s
+all cases finished
+phase2 finished

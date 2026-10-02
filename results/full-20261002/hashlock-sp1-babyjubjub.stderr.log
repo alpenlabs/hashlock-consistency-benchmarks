@@ -1,0 +1,49 @@
+stage=input_and_oracle status=started
+stage=input_and_oracle status=finished seconds=0.006212
+stage=prover_initialization status=started
+stage=prover_initialization status=finished seconds=2.034617
+stage=execute status=started
+stage=execute status=finished seconds=9.129931
+stage=key_setup status=started
+stage=key_setup status=finished seconds=0.266449
+stage=core_prove status=started
+2026-10-01T21:50:44.394456Z  WARN sp1_prover: High cycle count detected (107M cycles). For better performance, consider using the Succinct Prover Network: https://docs.succinct.xyz/docs/sp1/generating-proofs/prover-network
+stage=core_prove status=finished seconds=2650.357719
+stage=core_verify status=started
+stage=core_verify status=finished seconds=26.423274
+stage=compress status=started
+stage=compress status=finished seconds=1848.759104
+stage=compressed_verify status=started
+stage=compressed_verify status=finished seconds=0.076011
+stage=shrink status=started
+stage=shrink status=finished seconds=5.611771
+stage=shrink_verify status=started
+stage=shrink_verify status=finished seconds=0.039358
+stage=wrap_bn254 status=started
+stage=wrap_bn254 status=finished seconds=126.641177
+stage=wrap_bn254_verify status=started
+stage=wrap_bn254_verify status=finished seconds=0.104258
+stage=groth16_wrap status=started
+stage=groth16_wrap status=finished seconds=20.185393
+stage=groth16_verify status=started
+stage=groth16_verify status=finished seconds=0.002781
+stage=groth16_negative_verify status=started
+stage=groth16_negative_verify status=finished seconds=0.002933
+     4690.08 real     45298.01 user       781.06 sys
+         28269936640  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+           147372329  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                3480  signals received
+                2500  voluntary context switches
+            30421263  involuntary context switches
+     473843260179951  instructions retired
+     138451394102011  cycles elapsed
+         27945636480  peak memory footprint

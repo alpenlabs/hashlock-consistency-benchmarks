@@ -1,0 +1,14 @@
+/bin/
+/results/**/*.bin
+/results/**/*.prof
+/soldering/host/target/
+/soldering/guest/target/
+__pycache__/
+.DS_Store
+/hashlock-sp1/host/target/
+/hashlock-sp1/guest/target/
+/experiments/public-values/host/target/
+/experiments/public-values/guests/*/target/
+/components/sp1/host/target/
+/components/sp1/guest/target/
+/experiments/**/results/**/*.bin

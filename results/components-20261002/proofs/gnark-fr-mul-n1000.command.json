@@ -1,0 +1,14 @@
+[
+  "/usr/bin/time",
+  "-l",
+  "./bin/components-gnark",
+  "bench",
+  "-op",
+  "fr-mul",
+  "-n",
+  "1000",
+  "-mode",
+  "prove",
+  "-out",
+  "./results/components-20261002/proofs/gnark-fr-mul-n1000"
+]

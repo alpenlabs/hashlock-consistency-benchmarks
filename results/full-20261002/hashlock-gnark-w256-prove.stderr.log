@@ -1,0 +1,34 @@
+stage=load_constraint_system status=started
+stage=load_constraint_system status=finished seconds=0.943043
+stage=host_fixture status=started
+stage=host_fixture status=finished seconds=0.032128
+stage=witness status=started
+stage=witness status=finished seconds=0.006746
+stage=load_keys status=started
+stage=load_keys status=finished seconds=6.172313
+stage=prove status=started
+stage=prove status=finished seconds=36.733970
+stage=verify status=started
+stage=verify status=finished seconds=0.003350
+stage=negative_verification status=started
+stage=negative_verification status=finished seconds=0.010721
+stage=serialize status=started
+stage=serialize status=finished seconds=2.296796
+       46.32 real       361.35 user         2.69 sys
+         20717109248  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+             1264967  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               12667  signals received
+                9952  voluntary context switches
+              106411  involuntary context switches
+       3175874029561  instructions retired
+       1101413083953  cycles elapsed
+         20721204320  peak memory footprint

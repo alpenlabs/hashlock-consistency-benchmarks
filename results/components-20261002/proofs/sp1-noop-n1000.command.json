@@ -1,0 +1,13 @@
+[
+  "/usr/bin/time",
+  "-l",
+  "./components/sp1/host/target/release/components-sp1-bench",
+  "--op",
+  "noop",
+  "--n",
+  "1000",
+  "--mode",
+  "compressed",
+  "--out",
+  "./results/components-20261002/proofs/sp1-noop-n1000"
+]
