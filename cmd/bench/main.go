@@ -15,13 +15,17 @@ import (
 	"time"
 
 	"github.com/consensys/gnark-crypto/ecc"
+	"github.com/consensys/gnark-crypto/kzg"
 	"github.com/consensys/gnark/backend/groth16"
+	"github.com/consensys/gnark/backend/plonk"
 	"github.com/consensys/gnark/backend/witness"
 	"github.com/consensys/gnark/constraint"
 	"github.com/consensys/gnark/constraint/solver"
 	"github.com/consensys/gnark/frontend"
 	fcs "github.com/consensys/gnark/frontend/cs"
 	"github.com/consensys/gnark/frontend/cs/r1cs"
+	"github.com/consensys/gnark/frontend/cs/scs"
+	"github.com/consensys/gnark/test/unsafekzg"
 	"hashlock-consistency-bench/circuit"
 )
 
@@ -144,6 +148,7 @@ func run() error {
 	seed := flag.String("seed", "20261001", "deterministic synthetic witness seed")
 	out := flag.String("out", "", "new output directory (required)")
 	keys := flag.String("keys", "", "key directory: setup writes it; prove reads it instead of compiling and generating keys")
+	backend := flag.String("backend", "groth16", "groth16 or plonk")
 	flag.Parse()
 	if *wires < 1 || *wires > int(^uint(0)>>1)/2 || *out == "" {
 		return fmt.Errorf("positive --wires and --out are required")
@@ -157,6 +162,12 @@ func run() error {
 	if *keys != "" && *mode != "setup" && *mode != "prove" {
 		return fmt.Errorf("-keys applies only to setup and prove")
 	}
+	if *backend != "groth16" && *backend != "plonk" {
+		return fmt.Errorf("invalid backend")
+	}
+	if *backend == "plonk" && (*keys != "" || *mode == "setup") {
+		return fmt.Errorf("-keys and setup mode support only groth16")
+	}
 	if err := os.Mkdir(*out, 0o755); err != nil {
 		return err
 	}
@@ -169,11 +180,12 @@ func run() error {
 		"seed": *seed, "hash": "SHA-256", "scalar_encoding": "unsigned 32-byte big-endian; no y < L condition",
 		"scalar_range_check": false, "preimage_bits": 256,
 		"group":        "EIP-2494 Baby Jubjub, reduced twisted Edwards form, prime subgroup",
-		"scalar_order": circuit.Order().String(), "proof_system": "native Groth16 / BN254 / gnark v0.14.0",
+		"scalar_order": circuit.Order().String(), "proof_system": "native " + *backend + " / BN254 / gnark v0.14.0", "backend": *backend,
 		"fixed_base_method": "two-bit constant table, native Edwards addition",
 		"cpu_workers":       runtime.GOMAXPROCS(0), "go_version": runtime.Version(),
 		"go_build_info": info, "timings_s": times, "artifact_bytes": sizes,
-		"proof_verified": false, "trusted_setup": "local circuit-specific test CRS",
+		"proof_verified": false, "trusted_setup": map[string]string{"groth16": "local circuit-specific test CRS",
+			"plonk": "universal KZG SRS; unsafe local test SRS for timing"}[*backend],
 		"scope":    "hash/group consistency only; polynomial evaluation points supplied as public inputs",
 		"keys_dir": *keys, "key_generation_in_this_process": *mode == "setup" || (*mode == "prove" && *keys == ""),
 	}}
@@ -189,7 +201,11 @@ func run() error {
 			return err
 		}
 	} else if err := r.stage("compile", func() (err error) {
-		cs, err = frontend.Compile(ecc.BN254.ScalarField(), r1cs.NewBuilder, circuit.New(2**wires))
+		var builder frontend.NewBuilder = r1cs.NewBuilder
+		if *backend == "plonk" {
+			builder = scs.NewBuilder
+		}
+		cs, err = frontend.Compile(ecc.BN254.ScalarField(), builder, circuit.New(2**wires))
 		return err
 	}); err != nil {
 		return err
@@ -258,28 +274,51 @@ func run() error {
 			}
 			r.data["constraints_satisfied"] = true
 		} else {
-			var pk groth16.ProvingKey
-			var vk groth16.VerifyingKey
-			if *keys == "" {
-				if err := r.stage("setup", func() (err error) { pk, vk, err = groth16.Setup(cs); return err }); err != nil {
+			var verify func(witness.Witness) error
+			var proofOut, vkOut, pkOut io.WriterTo
+			if *backend == "plonk" {
+				// A test SRS costs the same to use as a ceremony SRS (e.g. Aztec Ignition) of equal size.
+				var srs, srsLagrange kzg.SRS
+				if err := r.stage("srs", func() (err error) { srs, srsLagrange, err = unsafekzg.NewSRS(cs); return err }); err != nil {
 					return err
 				}
-			} else if err := r.stage("load_keys", func() error {
-				pk, vk = groth16.NewProvingKey(ecc.BN254), groth16.NewVerifyingKey(ecc.BN254)
-				// Unchecked raw decoding: setup mode wrote these keys.
-				if err := readKeyFile(filepath.Join(*keys, "proving-key.raw.bin"), pk.UnsafeReadFrom); err != nil {
+				var pk plonk.ProvingKey
+				var vk plonk.VerifyingKey
+				if err := r.stage("setup", func() (err error) { pk, vk, err = plonk.Setup(cs, srs, srsLagrange); return err }); err != nil {
 					return err
 				}
-				return readKeyFile(filepath.Join(*keys, "verifying-key.bin"), vk.ReadFrom)
-			}); err != nil {
-				return err
+				var proof plonk.Proof
+				if err := r.stage("prove", func() (err error) { proof, err = plonk.Prove(cs, pk, full); return err }); err != nil {
+					return err
+				}
+				verify = func(w witness.Witness) error { return plonk.Verify(proof, vk, w) }
+				proofOut, vkOut, pkOut = proof, vk, pk
+			} else {
+				var pk groth16.ProvingKey
+				var vk groth16.VerifyingKey
+				if *keys == "" {
+					if err := r.stage("setup", func() (err error) { pk, vk, err = groth16.Setup(cs); return err }); err != nil {
+						return err
+					}
+				} else if err := r.stage("load_keys", func() error {
+					pk, vk = groth16.NewProvingKey(ecc.BN254), groth16.NewVerifyingKey(ecc.BN254)
+					// Unchecked raw decoding: setup mode wrote these keys.
+					if err := readKeyFile(filepath.Join(*keys, "proving-key.raw.bin"), pk.UnsafeReadFrom); err != nil {
+						return err
+					}
+					return readKeyFile(filepath.Join(*keys, "verifying-key.bin"), vk.ReadFrom)
+				}); err != nil {
+					return err
+				}
+				r.data["proving_key_g1_elements"], r.data["proving_key_g2_elements"] = pk.NbG1(), pk.NbG2()
+				var proof groth16.Proof
+				if err := r.stage("prove", func() (err error) { proof, err = groth16.Prove(cs, pk, full); return err }); err != nil {
+					return err
+				}
+				verify = func(w witness.Witness) error { return groth16.Verify(proof, vk, w) }
+				proofOut, vkOut, pkOut = proof, vk, pk
 			}
-			r.data["proving_key_g1_elements"], r.data["proving_key_g2_elements"] = pk.NbG1(), pk.NbG2()
-			var proof groth16.Proof
-			if err := r.stage("prove", func() (err error) { proof, err = groth16.Prove(cs, pk, full); return err }); err != nil {
-				return err
-			}
-			if err := r.stage("verify", func() error { return groth16.Verify(proof, vk, public) }); err != nil {
+			if err := r.stage("verify", func() error { return verify(public) }); err != nil {
 				return err
 			}
 			r.data["proof_verified"] = true
@@ -301,7 +340,7 @@ func run() error {
 					if err != nil {
 						return err
 					}
-					if groth16.Verify(proof, vk, badPublic) == nil {
+					if verify(badPublic) == nil {
 						return fmt.Errorf("proof accepted altered public %s", change)
 					}
 				}
@@ -315,14 +354,14 @@ func run() error {
 					name  string
 					value io.WriterTo
 				}{
-					{"proof.bin", proof}, {"verification-key.bin", vk}, {"public-witness.bin", public},
+					{"proof.bin", proofOut}, {"verification-key.bin", vkOut}, {"public-witness.bin", public},
 				} {
 					if err := writeArtifact(*out, item.name, item.value, sizes); err != nil {
 						return err
 					}
 				}
 				// Measure the encoded key size without keeping the file.
-				n, err := pk.WriteTo(io.Discard)
+				n, err := pkOut.WriteTo(io.Discard)
 				sizes["proving-key-serialized-not-saved"] = n
 				return err
 			}); err != nil {

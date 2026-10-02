@@ -12,3 +12,5 @@ __pycache__/
 /components/sp1/host/target/
 /components/sp1/guest/target/
 /experiments/**/results/**/*.bin
+/experiments/no-nonce/host/target/
+/experiments/no-nonce/guest/target/

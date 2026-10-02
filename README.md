@@ -47,6 +47,19 @@ The hardware differs, so this is a consistency check, not a reproduction:
 
 SP1 sizes shards by installed RAM, so a machine with different memory also proves with different shard settings. Each extra instance adds about 190 s here and 210–240 s in BABE's table.
 
+## Hashlock with PLONK
+
+PLONK avoids Groth16's circuit-specific trusted setup by using a universal KZG reference string (Aztec Ignition would do). The same circuit, built with `-backend plonk`, measured at small sizes ([`results/plonk-20261002/`](results/plonk-20261002/README.md)):
+
+| | Groth16 | PLONK |
+| --- | ---: | ---: |
+| Size per row | 26,810 constraints | 92,866 gates |
+| Proof generation, 32 wires | 5.0 s | 69.0 s |
+| Peak RSS, 32 wires | 4.1 GiB | 14.4 GiB |
+| Proof size | 196 B | 584 B |
+
+One gnark PLONK proof on BN254 holds at most about 358 wires (the prover's FFT domain is 4× the circuit size, and BN254 caps domains at 2^28), so 1,019 wires need at least three proofs; memory limits this machine to about 177 wires per proof. Estimated total proof generation is 33–37 minutes, slower than the single SP1 secp256k1 proof (23.4 min), which also needs no circuit-specific setup.
+
 ## Component costs
 
 [`components/`](components/README.md) measures single operations, repeated up to 1,000 times, and reports the amortized cost of one:
@@ -91,7 +104,7 @@ The Baby Jubjub SP1 case needs the gnark-crypto statement as its oracle: `bin/ha
 
 ```text
 circuit/                 gnark hashlock circuit and tests (relation details: docs/hashlock.md)
-cmd/bench, cmd/verify    gnark prover (compile, setup, prove; -keys for separate processes) and verifier
+cmd/bench, cmd/verify    gnark prover (compile, setup, prove; -keys for separate processes; -backend plonk) and verifier
 cmd/statement            writes the public statement with gnark-crypto
 soldering/               upstream SP1 soldering guest and benchmark host
 hashlock-sp1/            hashlock relation as an SP1 guest, and its host

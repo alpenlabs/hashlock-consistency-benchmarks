@@ -1,0 +1,43 @@
+{
+  "active_stage": null,
+  "additional_instances": 5,
+  "environment": {
+    "GOMAXPROCS": null,
+    "RAYON_NUM_THREADS": "12",
+    "SHARD_BATCH_SIZE": null,
+    "SHARD_SIZE": null,
+    "SP1_DISABLE_VK_VERIFICATION": null,
+    "SPLIT_THRESHOLD": null,
+    "TRACE_GEN_WORKERS": null
+  },
+  "expected_sha256_label_hashes": 12228,
+  "expected_xor_label_bindings": 10190,
+  "guest_elf_sha256": "8073c4130876098cfedfff9c814a09db3f946c76ea414d46b215ee236fbdb726",
+  "guest_instructions": 42845066,
+  "guest_output_matches_host": true,
+  "guest_syscalls": 24476,
+  "host_arch": "aarch64",
+  "host_os": "macos",
+  "input_bytes": 195704,
+  "input_distribution": "independent odd Free-XOR offset per instance",
+  "input_sha256": "027f456ad99740d784c4cbdef340dd80951e50cbcf10de5fcd3713cb084f9d80",
+  "label_bytes": 16,
+  "mode": "execute",
+  "note": "One local trial; not an exact reproduction of BABE's table.",
+  "proof_bytes": {},
+  "public_values_bytes": 554440,
+  "schema_version": 2,
+  "seed": 20261001,
+  "sp1_circuit_version": "v5.0.0",
+  "sp1_crates_version": "5.2.2",
+  "status": "complete",
+  "timings_s": {
+    "execute": 1.292150833,
+    "input_and_oracle": 0.00242275,
+    "prover_initialization": 2.18439325
+  },
+  "total_retained_instances": 6,
+  "upstream_commit": "52b49127dc426f0c88ce7fc418116e67173c2f22",
+  "verified_stages": [],
+  "wires": 1019
+}
