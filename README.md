@@ -49,7 +49,7 @@ SP1 sizes shards by installed RAM, so a machine with different memory also prove
 
 ## Hashlock with PLONK
 
-PLONK avoids Groth16's circuit-specific trusted setup by using a universal KZG reference string (Aztec Ignition would do). The same circuit, built with `-backend plonk`, measured at small sizes ([`results/plonk-20261002/`](results/plonk-20261002/README.md)):
+PLONK avoids Groth16's circuit-specific trusted setup by using a universal KZG reference string, such as [Aztec Ignition](https://github.com/AztecProtocol/ignition-verification) (transcripts at `https://aztec-ignition.s3.amazonaws.com/`, loadable with [gnark-ignition-verifier](https://pkg.go.dev/github.com/consensys/gnark-ignition-verifier)). The same circuit, built with `-backend plonk`, measured at small sizes ([`results/plonk-20261002/`](results/plonk-20261002/README.md)):
 
 | | Groth16 | PLONK |
 | --- | ---: | ---: |
