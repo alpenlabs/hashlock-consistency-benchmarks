@@ -1,0 +1,2 @@
+# Optional dependency for scripts/plot_benchmarks.py; supports Python 3.9+.
+matplotlib==3.9.4

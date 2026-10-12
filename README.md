@@ -14,7 +14,7 @@ Two ways to tie garbled-circuit input labels to on-chain data, benchmarked at 1,
 
 ## Results
 
-Apple M2 Max (12 cores, 64 GB), 12 threads, one trial each. Full tables and raw results: [`results/full-20261002/comparison.md`](results/full-20261002/comparison.md).
+Apple M2 Max (12 cores, 64 GB), 12 threads. Full tables and raw results: [`results/full-20261002/comparison.md`](results/full-20261002/comparison.md).
 
 | # | Version | Guest cycles / constraints | One-time setup | Proof generation | Peak RSS |
 | --- | --- | ---: | ---: | ---: | ---: |
@@ -24,6 +24,25 @@ Apple M2 Max (12 cores, 64 GB), 12 threads, one trial each. Full tables and raw 
 | 4 | Hashlock, SP1, secp256k1 | 20.8M cycles | 0.26 s | 1,406 s | 29.6 GiB |
 
 Rows 1, 3 and 4 are full runs whose Groth16 proofs verified. SP1 proof generation is STARK proving plus about 147 s of Groth16 wrapping; its one-time setup is program-key generation, since the Groth16 keys are SP1's pre-made v5.0.0 artifacts. Row 2 does not fit in 64 GB (compiling the full circuit alone peaks at 44 GiB), so it is extrapolated linearly from verified 256- and 512-wire runs; its one-time setup is circuit-specific Groth16 key generation.
+
+<!-- benchmark-chart:start -->
+## Proving time versus retained instances
+
+![Soldering (M=5: 23.6 min, M=6: 26.9 min, M=7: 30.0 min); hash consistency with secp256k1: 23.4 min, a constant reference.](docs/figures/proving-time-vs-retained-instances.png)
+
+1,019 input positions (2,038 position/value pairs), SP1 5.2.2, CPU proving. Apple M2 Max · 64 GiB RAM · 12 threads. Proof-generation time includes STARK proving and both Groth16 wrapping stages; it excludes setup and verification. All plotted runs completed and their Groth16 proofs verified.
+
+The soldering markers show the measured proving times. The dashed hash-consistency line uses the measured runtime as a constant reference because that proof's workload is independent of the number of retained instances at a fixed input size. Garbling, polynomial commitments, and label reconstruction are outside these timings.
+
+[Raw results](results/full-20261002/) · [PNG](docs/figures/proving-time-vs-retained-instances.png) · [SVG](docs/figures/proving-time-vs-retained-instances.svg)
+
+Regenerate the images and this README section together from the stored results (no proving runs):
+
+```sh
+python3 -m pip install -r scripts/requirements-plot.txt
+python3 scripts/plot_benchmarks.py results/full-20261002
+```
+<!-- benchmark-chart:end -->
 
 ## Soldering against BABE
 
@@ -110,7 +129,7 @@ soldering/               upstream SP1 soldering guest and benchmark host
 hashlock-sp1/            hashlock relation as an SP1 guest, and its host
 components/              per-operation benchmarks for SP1 and gnark
 experiments/             soldering guest variants for public-value hashing
-scripts/                 full-size driver and table builder
+scripts/                 full-size driver, table builder, and chart/README generator
 run.py, tests/           two-approach runner and its tests
 results/                 measured results
 ```
